@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Modal / Dialog Pattern</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        button {
+            font-size: 1rem;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .dialog {
+            background: #fff;
+            max-width: 32rem;
+            padding: 1.5rem;
+            margin: 10vh auto;
+            position: relative;
+        }
+
+        [hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Modal / Dialog</h1>
+        <p>
+            This example demonstrates a basic accessible modal dialog with
+            focus management and keyboard support.
+        </p>
+        <button data-modal-trigger="example-dialog">
+            Open dialog
+        </button>
+        <div class="overlay" hidden></div>
+        <div id="example-dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" hidden>
+            <h2 id="dialog-title">Example dialog</h2>
+            <p>
+                This dialog traps focus while open and returns focus to the
+                triggering element when closed.
+            </p>
+            <button data-modal-close>
+                Close dialog
+            </button>
+        </div>
+    </main>
+    <script src="./modal.js"></script>
+</body>
+
+</html>
