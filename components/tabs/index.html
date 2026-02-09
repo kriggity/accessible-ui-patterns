@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs Pattern</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .tablist {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+        }
+
+        .tab[aria-selected="true"] {
+            border-bottom: 2px solid #000;
+            font-weight: bold;
+        }
+
+        .tabpanel {
+            padding: 1rem 0;
+        }
+
+        [hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Tabs</h1>
+        <p>
+            This example demonstrates a basic accessible tabs interface with keyboard support.
+        </p>
+        <div class="tablist" role="tablist" aria-labelledby="tablist-1">
+            <!-- <h2 id="tablist-1">Tab List</h2> -->
+            <button class="tab" id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+                tabindex="1">Tab 1</button>
+            <button class="tab" id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"
+                tabindex="0">Tab
+                2</button>
+            <button class="tab" id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3"
+                tabindex="0">Tab
+                3</button>
+        </div>
+        <div class="tabpanel-wrapper">
+            <div id="tabpanel-1" role="tabpanel" class="tabpanel" aria-labelledby="tab-1" visible>
+                <h3>Tab Panel 1 Headline</h3>
+                <p>Lorem ipsum dolor sit amet, ea has dolore scaevola deterruisset. </p>
+            </div>
+            <div id="tabpanel-2" role="tabpanel" class="tabpanel" aria-labelledby="tab-2" hidden>
+                <h3>Tab Panel 2 Headline</h3>
+                <p>Lorem ipsum dolor sit amet, ea has dolore scaevola deterruisset. </p>
+            </div>
+            <div id="tabpanel-3" role="tabpanel" class="tabpanel" aria-labelledby="tab-3" hidden>
+                <h3>Tab Panel 3 Headline</h3>
+                <p>Lorem ipsum dolor sit amet, ea has dolore scaevola deterruisset. </p>
+            </div>
+        </div>
+    </main>
+    <script src="./tabs.js"></script>
+</body>
+
+</html>
