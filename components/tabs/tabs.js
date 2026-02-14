@@ -14,21 +14,35 @@
         f.setAttribute("aria-selected", "false");
 
         // Set all tab buttons' tabindex:-1
-        f.setAttribute("tabindex", "0");
+        f.setAttribute("tabindex", "-1");
       });
       // Set this tab button's aria-selected:true
       e.setAttribute("aria-selected", "true");
-
-      // Set this tab button's tabindex:1
-      e.setAttribute("tabindex", "1");
+      // Remove this tab button's tabindex
+      e.removeAttribute("tabindex");
 
       // Set all tabpanels' to hidden
       tabpanel.forEach((panel) => {
-        panel.hidden = true;
+        panel.removeAttribute("visible");
+        panel.setAttribute("hidden", "");
       });
       // Set the corresponding tabpanel visible
-      tabpanel[i].hidden = false;
+      tabpanel[i].removeAttribute("hidden");
+      tabpanel[i].setAttribute("visible", "");
     };
     // Need to add keyboard functionality
+  });
+  document.addEventListener("keydown", function () {
+    switch (event.key) {
+      case "ArrowLeft":
+        // console.log(event.key);
+        break;
+      case "ArrowRight":
+        // console.log(event.key);
+        break;
+      default:
+        // console.log("default");
+        break;
+    }
   });
 })();
