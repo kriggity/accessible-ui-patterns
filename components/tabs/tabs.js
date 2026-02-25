@@ -1,60 +1,70 @@
 "use strict";
 (function () {
-  // Define vars
-  const tab = document.querySelectorAll(".tab");
-  const tabpanel = document.querySelectorAll(".tabpanel");
-  let tabfocus = 0;
-  const updateTabFocus = (x) => {
-    tabfocus = x;
-    resetTabPanels();
-    updateTab(x);
-    updateTabPanel(x);
-  };
-  const resetTabPanels = () => {
-    tab.forEach((e) => {
-      // Set all tab buttons' aria-selected:false
-      e.setAttribute("aria-selected", "false");
-      // Set all tab buttons' tabindex:-1
-      e.setAttribute("tabindex", "-1");
-    });
-    // Set all tabpanels' to hidden
-    tabpanel.forEach((panel) => {
-      panel.removeAttribute("visible");
-      panel.setAttribute("hidden", "");
-    });
-  };
-  const updateTab = (x) => {
-    // Set this tab button's aria-selected:true
-    tab[x].setAttribute("aria-selected", "true");
-    // Remove this tab button's tabindex
-    tab[x].removeAttribute("tabindex");
-  };
-  const updateTabPanel = (x) => {
-    tabpanel[x].removeAttribute("hidden");
-    tabpanel[x].setAttribute("visible", "");
-  };
-  // For each tab button
-  tab.forEach((e, i) => {
-    // Click event
-    e.onclick = () => {
-      updateTabFocus(i);
+  const tablists = document.querySelectorAll('[role="tablist"]');
+
+  tablists.forEach((tablist) => {
+    const tabs = tablist.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+    let tabFocus = 0;
+
+    // Roving tabindex pattern:
+    // Only the active tab remains tabbable.
+    const updateTabFocus = (index) => {
+      tabFocus = index;
+      resetTabs();
+      activateTab(index);
+      activatePanel(index);
     };
-  });
-  // Need to add keyboard functionality
-  document.addEventListener("keydown", function () {
-    switch (event.key) {
-      case "ArrowLeft":
-        if (tabfocus > 0) {
-          updateTabFocus(tabfocus - 1);
+
+    const resetTabs = () => {
+      tabs.forEach((tab) => {
+        tab.setAttribute("aria-selected", "false");
+        tab.tabIndex = -1;
+      });
+
+      panels.forEach((panel) => {
+        panel.setAttribute("hidden", "");
+      });
+    };
+
+    const activateTab = (index) => {
+      tabs[index].setAttribute("aria-selected", "true");
+      tabs[index].removeAttribute("tabindex");
+      tabs[index].focus();
+    };
+
+    const activatePanel = (index) => {
+      panels[index].removeAttribute("hidden");
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        updateTabFocus(index);
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        switch (event.key) {
+          case "ArrowLeft":
+            event.preventDefault();
+            if (tabFocus > 0) updateTabFocus(tabFocus - 1);
+            break;
+
+          case "ArrowRight":
+            event.preventDefault();
+            if (tabFocus < tabs.length - 1) updateTabFocus(tabFocus + 1);
+            break;
+
+          case "Home":
+            event.preventDefault();
+            updateTabFocus(0);
+            break;
+
+          case "End":
+            event.preventDefault();
+            updateTabFocus(tabs.length - 1);
+            break;
         }
-        break;
-      case "ArrowRight":
-        if (tabfocus < tab.length - 1) {
-          updateTabFocus(tabfocus + 1);
-        }
-        break;
-      default:
-        break;
-    }
+      });
+    });
   });
 })();
