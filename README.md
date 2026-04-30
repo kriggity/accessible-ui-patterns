@@ -32,3 +32,7 @@ These notes are as important as the code itself.
 This repository is intended for front-end developers and UX engineers who care about interaction quality, accessibility, and long-term maintainability — particularly in content-driven or design-system-adjacent environments.
 
 It is not a tutorial, and it is not meant to be dropped directly into production without adaptation.
+
+## Project Decisions
+
+Project-level decisions — scope, standards baseline, assistive technology coverage, and pattern selection rationale — are recorded in [`decisions.md`](./decisions.md). Per-pattern decisions live in each pattern's README.

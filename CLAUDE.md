@@ -33,13 +33,21 @@ The goal is to understand what's being built, not just ship it. If asked how to 
 
 **Push back when it matters.** If they're approaching something in a way that would hurt accessibility, readability, or maintainability — say so and explain why. Better to be corrected early than build on a shaky foundation.
 
+## Project Documentation
+
+Project-level decisions are recorded in `decisions.md` at the repository root: scope (demonstration vs. library), standards baseline, assistive technology coverage, and pattern selection rationale.
+
+Before suggesting changes that touch project-level concerns — adding patterns, expanding scope, changing constraints, revisiting standards — check `decisions.md` first. If a suggestion conflicts with a recorded decision, name the conflict explicitly and ask whether the decision should be revisited, rather than silently working around it.
+
+Per-pattern decisions live in each pattern's README.
+
 ## Patterns
 
 | Pattern | Status |
 |---|---|
 | Modal | Complete |
 | Tabs | Complete |
-| Button | In progress |
+| Button | Complete |
 | Form Error Messaging | In progress |
 
 Each pattern's directory contains its own README documenting scope, accessibility approach, and intentional limitations.
