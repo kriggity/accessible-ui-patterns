@@ -54,5 +54,7 @@ focused and understandable.
 
 ## References
 
-- ARIA APG Dialog (Modal) Pattern
-- WCAG 2.2 SC 2.1.2 (No Keyboard Trap), 2.4.3 (Focus Order), 4.1.2 (Name, Role, Value); 
+- ARIA Authoring Practices — Dialog (Modal) Pattern
+- WCAG 2.2 — Success Criterion 2.1.2 (No Keyboard Trap)
+- WCAG 2.2 — Success Criterion 2.4.3 (Focus Order)
+- WCAG 2.2 — Success Criterion 4.1.2 (Name, Role, Value)

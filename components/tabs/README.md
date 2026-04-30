@@ -81,5 +81,8 @@ Use this pattern for:
 Do not use tabs to hide critical content that users must discover.
 
 ## References
-- WCAG 2.2 SC 2.1.1 (Keyboard), 2.4.3 (Focus Order), 4.1.2 (Name, Role, Value);
-- ARIA APG Tabs Pattern
+
+- ARIA Authoring Practices — Tabs Pattern
+- WCAG 2.2 — Success Criterion 2.1.1 (Keyboard)
+- WCAG 2.2 — Success Criterion 2.4.3 (Focus Order)
+- WCAG 2.2 — Success Criterion 4.1.2 (Name, Role, Value)
