@@ -51,3 +51,8 @@ JavaScript does not generate markup or manage layout.
 
 These tradeoffs are intentional and documented to keep the pattern
 focused and understandable.
+
+## References
+
+- ARIA APG Dialog (Modal) Pattern
+- WCAG 2.2 SC 2.1.2 (No Keyboard Trap), 2.4.3 (Focus Order), 4.1.2 (Name, Role, Value); 

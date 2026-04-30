@@ -79,3 +79,7 @@ Use this pattern for:
 - Situations where content should remain in the DOM
 
 Do not use tabs to hide critical content that users must discover.
+
+## References
+- WCAG 2.2 SC 2.1.1 (Keyboard), 2.4.3 (Focus Order), 4.1.2 (Name, Role, Value);
+- ARIA APG Tabs Pattern
