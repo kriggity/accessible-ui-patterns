@@ -24,3 +24,6 @@ build/
 # Temporary files
 tmp/
 temp/
+
+# AI tooling — local context only
+.claude/
