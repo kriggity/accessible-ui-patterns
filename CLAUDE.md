@@ -48,7 +48,7 @@ Per-pattern decisions live in each pattern's README.
 | Modal | Complete |
 | Tabs | Complete |
 | Button | Complete |
-| Form Error Messaging | In progress |
+| Form Error Messaging | Complete |
 
 Each pattern's directory contains its own README documenting scope, accessibility approach, and intentional limitations.
 
